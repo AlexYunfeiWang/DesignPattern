@@ -1,14 +1,14 @@
 public class VehicleFactory {
-    public Vehicle getVehicle(String vehicleType) {
-        if (vehicleType.equalsIgnoreCase("Truck")) {
-            return new Truck();
+    public Vehicle getVehicle(VehicleType vehicleType) {
+        switch(vehicleType) {
+            case CAR:
+                return new Car();
+            case TRUCK:
+                return new Truck();
+            case BUS:
+                return new Bus();
+            default:
+                return null;
         }
-        else if (vehicleType.equalsIgnoreCase("Car")) {
-            return new Car();
-        }
-        else if (vehicleType.equalsIgnoreCase("Bus")) {
-            return new Bus();
-        }
-        return null;
     }
 }
